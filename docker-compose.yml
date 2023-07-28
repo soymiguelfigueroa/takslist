@@ -1,0 +1,49 @@
+version: '3.5'
+
+networks:
+  default:
+
+volumes:
+  mariadb:
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    restart: always
+    networks:
+      - default
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: YES
+      MARIADB_DATABASE: takslist
+    ports:
+      - 3306:3306
+
+  php:
+    container_name: php
+    image: php:7.4.33-apache
+    build: .
+    depends_on:
+      - mariadb
+    networks:
+      - default
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - 80:80
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: always
+    depends_on:
+      - mariadb
+    networks:
+      - default
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+    ports:
+      - 8080:80
