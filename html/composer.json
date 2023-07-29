@@ -1,0 +1,16 @@
+{
+    "name": "soymiguelfigueroa/taskslist",
+    "description": "Task list management",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Soymiguelfigueroa\\Taskslist\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miguel Figueroa"
+        }
+    ],
+    "require": {}
+}
