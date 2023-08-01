@@ -2,7 +2,10 @@
 
 require_once 'vendor/autoload.php';
 
-use Soymiguelfigueroa\Taskslist\Test\Index;
+use Soymiguelfigueroa\Taskslist\Routing\Web as WebRouter;
 
-$class = new Index();
-$class->saludar();
+$router = new WebRouter();
+$router->add('/', function () {
+    echo 'Hello Router!';
+});
+$router->run();
