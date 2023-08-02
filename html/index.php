@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-use Soymiguelfigueroa\Taskslist\Routing\Web as WebRouter;
+use App\Routing\Web as WebRouter;
 
 $router = new WebRouter();
 $router->add('/', function () {

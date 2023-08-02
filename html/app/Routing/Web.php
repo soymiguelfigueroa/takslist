@@ -1,6 +1,6 @@
 <?php
 
-namespace Soymiguelfigueroa\Taskslist\Routing;
+namespace App\Routing;
 
 class Web
 {
