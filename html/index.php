@@ -5,5 +5,5 @@ require_once 'vendor/autoload.php';
 use App\Routing\Web as WebRouter;
 
 $router = new WebRouter();
-$router->add('/', 'App\Controllers\Controller@index');
+$router->add('/', 'App\Controllers\HomeController@index');
 $router->run();

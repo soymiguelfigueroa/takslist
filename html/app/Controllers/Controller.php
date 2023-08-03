@@ -2,12 +2,16 @@
 
 namespace App\Controllers;
 
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+
 class Controller
 {
-    public function index()
+    protected function render($view, $data = [])
     {
-        $loader = new \Twig\Loader\FilesystemLoader('app/Templates');
-        $twig = new \Twig\Environment($loader);
-        echo $twig->render('index.html');
+        $loader = new FilesystemLoader('app/Templates');
+        $twig = new Environment($loader);
+
+        echo $twig->render($view, $data);
     }
 }
