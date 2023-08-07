@@ -11,5 +11,6 @@ RUN docker-php-ext-install \
     mysqli \
     zip
 RUN docker-php-ext-enable mysqli
+RUN a2enmod rewrite
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
