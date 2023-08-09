@@ -17,7 +17,7 @@ services:
       - mariadb:/var/lib/mysql
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: YES
-      MARIADB_DATABASE: takslist
+      MARIADB_DATABASE: tasklist
     ports:
       - 3306:3306
 
@@ -44,6 +44,8 @@ services:
       - default
     environment:
       PMA_HOST: mariadb
+      PMA_PORT: '3306'
       PMA_USER: root
+      PMA_PASSWORD: ''
     ports:
       - 8080:80
