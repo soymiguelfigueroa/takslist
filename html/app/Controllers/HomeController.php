@@ -2,13 +2,11 @@
 
 namespace App\Controllers;
 
-use \App\Task;
-
 class HomeController extends Controller
 {
     public function index()
     {
-        $message = Task::test();
+        $message = 'Hello from controller';
 
         $this->render('index.html', compact('message'));
     }
