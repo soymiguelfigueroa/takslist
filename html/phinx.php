@@ -1,5 +1,7 @@
 <?php
 
+require_once './bootstrap.php';
+
 return
 [
     'paths' => [
@@ -8,35 +10,35 @@ return
     ],
     'environments' => [
         'default_migration_table' => 'phinxlog',
-        'default_environment' => 'development',
+        'default_environment' => $_ENV['APP_ENVIRONMENT'],
         'production' => [
-            'adapter' => 'mysql',
-            'host' => 'mariadb',
-            'name' => 'tasklist',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
+            'adapter' => $_ENV['DB_ADAPTER'],
+            'host' => $_ENV['DB_HOST'],
+            'name' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'pass' => $_ENV['DB_PASS'],
+            'port' => $_ENV['DB_PORT'],
             'charset' => 'utf8',
         ],
         'development' => [
-            'adapter' => 'mysql',
-            'host' => 'mariadb',
-            'name' => 'tasklist',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
+            'adapter' => $_ENV['DB_ADAPTER'],
+            'host' => $_ENV['DB_HOST'],
+            'name' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'pass' => $_ENV['DB_PASS'],
+            'port' => $_ENV['DB_PORT'],
             'charset' => 'utf8',
-            'table_prefix' => 'dev_'
+            'table_prefix' => $_ENV['DB_DEV_PREFIX'],
         ],
         'testing' => [
-            'adapter' => 'mysql',
-            'host' => 'mariadb',
-            'name' => 'tasklist',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
+            'adapter' => $_ENV['DB_ADAPTER'],
+            'host' => $_ENV['DB_HOST'],
+            'name' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'pass' => $_ENV['DB_PASS'],
+            'port' => $_ENV['DB_PORT'],
             'charset' => 'utf8',
-            'table_prefix' => 'test_'
+            'table_prefix' => $_ENV['DB_TEST_PREFIX'],
         ]
     ],
     'version_order' => 'creation'
