@@ -13,7 +13,6 @@
         }
     ],
     "require": {
-        "twig/twig": "^3.0",
-        "illuminate/database": "^10.18"
+        "twig/twig": "^3.0"
     }
 }
