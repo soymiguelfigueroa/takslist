@@ -15,6 +15,7 @@
     "require": {
         "twig/twig": "^3.0",
         "robmorgan/phinx": "^0.13.4",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "illuminate/database": "^10.18"
     }
 }

@@ -2,12 +2,30 @@
 
 namespace App\Controllers;
 
+use \App\Models\Task;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        $message = 'Hello from controller';
+        $tasks = Task::all()->toArray();
 
-        $this->render('index.html', compact('message'));
+        return $this->render('index.html', compact('tasks'));
+    }
+
+    public function create()
+    {
+        return $this->render('create.html');
+    }
+
+    public function store()
+    {
+        $title = filter_input(INPUT_POST, 'title');
+
+        $task = new Task();
+        $task->title = $title;
+        $task->save();
+
+        return $this->redirect('/');
     }
 }

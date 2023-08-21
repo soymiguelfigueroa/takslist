@@ -14,4 +14,9 @@ class Controller
 
         echo $twig->render($view, $data);
     }
+
+    protected function redirect($uri)
+    {
+        return header("location: $uri");
+    }
 }

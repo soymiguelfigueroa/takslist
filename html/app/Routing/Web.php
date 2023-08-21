@@ -17,7 +17,7 @@ class Web
 
     public function run()
     {
-        $uriGet = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';
+        $uriGet = isset($_GET['path']) ? '/' . $_GET['path'] : '/';
 
         foreach ($this->_uri as $key => $value) {
             if (preg_match("#^$value$#", $uriGet)) {
