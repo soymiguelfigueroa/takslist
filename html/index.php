@@ -25,4 +25,6 @@ $router = new App\Routing\Web();
 $router->add('/', 'App\Controllers\HomeController@index');
 $router->add('/create', 'App\Controllers\HomeController@create');
 $router->add('/store', 'App\Controllers\HomeController@store');
+$router->add('/edit', 'App\Controllers\HomeController@edit');
+$router->add('/update', 'App\Controllers\HomeController@update');
 $router->run();
